@@ -1,5 +1,8 @@
 .list {
-    margin-top: 2rem;
+  margin-top: 1rem;
+  height: calc(100vh - 13rem);
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .list li {
@@ -10,11 +13,18 @@
   padding: 0.5rem 0;
   cursor: pointer;
   transition: 0.3s;
+  width: 100%;
+  word-break: break-all;
 }
-.list li:hover{
-    transform: translateX(5px);
+.list li:hover {
+  transform: translateX(5px);
 }
 
 .list li p:nth-of-type(1) {
   width: 100%;
+}
+
+.paginationContainer {
+  display: flex;
+  justify-content: center;
 }

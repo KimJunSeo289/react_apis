@@ -42,9 +42,11 @@ const CampingPage = () => {
             </li>
           ))}
         </ul>
+        <div className={css.paginationContainer}>
+          <Pagination page={page} setPage={setPage} totalCount={totalCount} perPage={perPage} />
+        </div>
       </div>
       {isModalOpen && <DetailModal selected={selected} setIsModalOpen={setIsModalOpen} />}
-      <Pagination page={page} setPage={setPage} totalCount={totalCount} perPage={perPage} />
     </main>
   )
 }

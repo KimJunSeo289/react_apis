@@ -1,10 +1,19 @@
 import React from 'react'
 import css from './Pagination.module.css'
+import { useWindowSize } from '../hooks/useWindowSize'
 
 const Pagination = ({ page, setPage, totalCount, perPage }) => {
+  const { width } = useWindowSize()
   const totalPages = Math.ceil(totalCount / perPage) // 전체 페이지 = totalCount 나누기 perPage(10)의 갯수
-  const showPage = 10
 
+  // 화면 크기에 따라 보여줄 페이지 수 결정
+  const getShowPage = () => {
+    if (width < 768) return 3
+    if (width < 1024) return 5
+    return 10
+  }
+
+  const showPage = getShowPage()
   let startPage = Math.max(1, page - Math.floor(showPage / 2))
   let endPage = startPage + showPage - 1
 
