@@ -1,0 +1,27 @@
+.main {
+  padding: 0.5rem;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.list > * {
+  border: 1px solid gray;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+}
+.list li:hover {
+  background-color: rgb(94, 94, 94);
+}
+
+.activePage {
+  background-color: rgb(133, 128, 128);
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
